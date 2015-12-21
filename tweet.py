@@ -1,3 +1,10 @@
+################################################################################
+# Tweet with Viper
+#
+# Created by 123go.it
+# Authors: S. Pira - F. Manetti
+################################################################################
+
 def tweet(twitter_id,public_token,auth_token,message):
         try:
             if(twitter_id)!="":
