@@ -1,0 +1,261 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tweet with VIPER &mdash; Tweet with VIPER 1.0.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/viper.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Tweet with VIPER 1.0.0 documentation" href="#"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="#" class="fa fa-home"> Tweet with VIPER</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Tweet with VIPER</a><ul>
+<li><a class="reference internal" href="#description">Description</a><ul>
+<li><a class="reference internal" href="#setup">Setup</a></li>
+<li><a class="reference internal" href="#your-first-tweet">Your first Tweet</a></li>
+<li><a class="reference internal" href="#important-info">Important Info</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">Tweet with VIPER</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+      
+    <li>Tweet with VIPER</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="tweet-with-viper">
+<h1>Tweet with VIPER<a class="headerlink" href="#tweet-with-viper" title="Permalink to this headline">¶</a></h1>
+<p><strong>A simple library to tweet with your viperized board in 6 steps!</strong></p>
+<p>Be advised that this library does not tweet directly from your VIPERIZED board. It sends your tweets to our website (library.123go.it) that then tweets it from there.</p>
+<p>Username/password will NOT be sent to the site by OAuth mechanism. Our server stores the Public/Private couple of Tokens released from twitter during the authorization procedure. You can invalidate the OAuth token for this library anytime at <a class="reference external" href="http://twitter.com/settings/connections">http://twitter.com/settings/connections</a>.</p>
+<p>A simple 6 steps guide to authorize our &#8220;Tweet with VIPER&#8221; APP to tweet with your account is available at <a class="reference external" href="http://library.123go.it/twitter/index.html">http://library.123go.it/twitter/index.html</a>.</p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Tweet with VIPER Library is a library for VIPER to tweet on Twitter.</p>
+<p>With this library you can automate posting on twitter from your viperized board.</p>
+<p>Tweets are sent via a shared server, through our &#8220;Twitter with Viper&#8221; APP.</p>
+<div class="section" id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
+<p>Import the library in your python Code with:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">community.framan.twitter</span> <span class="kn">import</span> <span class="n">twitter</span>
+</pre></div>
+</div>
+<p>Connect your VIPERIZED board to internet choosing the right driver for your board from the repositories of VIPER.</p>
+<p>Before tweeting, you have to follow the 6 steps guide here <a class="reference external" href="http://library.123go.it/twitter">http://library.123go.it/twitter</a> to authorize our &#8220;Tweet with VIPER&#8221; APP. Take note of the Public Token and of the Secret Code at the end of the procedure.</p>
+</div>
+<div class="section" id="your-first-tweet">
+<h3>Your first Tweet<a class="headerlink" href="#your-first-tweet" title="Permalink to this headline">¶</a></h3>
+<p>Tweet using the simple tweet() function:</p>
+<div class="highlight-python"><div class="highlight"><pre>tweet(string public_token,string secure_code,string message)
+</pre></div>
+</div>
+<p><em>public_token</em>: your token received following the 6 steps guide described above.</p>
+<p><em>secure_code</em>: your secure code received following the 6 steps guide described above.</p>
+<p><em>message</em>: the tweet message (can contain a TAG or an HASHTAG).</p>
+<p>Go to twitter.com and enjoy your first Tweet with VIPER</p>
+<p>The library also include an example that shows how to tweet with a Particle Photon! You can clone it in the IDE or you can copy and paste from here:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">streams</span>
+
+<span class="c"># import the wifi interface</span>
+<span class="kn">from</span> <span class="nn">wireless</span> <span class="kn">import</span> <span class="n">wifi</span>
+
+<span class="kn">from</span> <span class="nn">community.framan.twitter</span> <span class="kn">import</span> <span class="n">twitter</span>
+
+<span class="c"># load the Photon wifi driver</span>
+<span class="c"># change the following import to use another network driver</span>
+<span class="kn">from</span> <span class="nn">bcm43362</span> <span class="kn">import</span> <span class="n">bcm43362</span> <span class="k">as</span> <span class="n">wifi_driver</span>
+
+<span class="n">streams</span><span class="o">.</span><span class="n">serial</span><span class="p">()</span>
+
+<span class="c"># init the wifi driver!</span>
+<span class="n">wifi_driver</span><span class="o">.</span><span class="n">auto_init</span><span class="p">()</span>
+
+<span class="c"># use the wifi interface to link to the Access Point</span>
+<span class="c"># change network name, security and password as needed</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Establishing Link...&quot;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="c"># FOR THIS EXAMPLE TO WORK, &quot;Network-Name&quot; AND &quot;Wifi-Password&quot; MUST BE SET</span>
+    <span class="c"># TO MATCH YOUR ACTUAL NETWORK CONFIGURATION</span>
+    <span class="n">wifi</span><span class="o">.</span><span class="n">link</span><span class="p">(</span><span class="s">&quot;Network-Name&quot;</span><span class="p">,</span><span class="n">wifi</span><span class="o">.</span><span class="n">WIFI_WPA2</span><span class="p">,</span><span class="s">&quot;Network-Pass&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;ooops, something wrong while linking :(&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="c"># FOR THIS EXAMPLE TO WORK YOU NEED TO FOLLOW THE STEPS AT:</span>
+<span class="c"># ------&gt; http://library.123go.it/twitter/   &lt;-------</span>
+<span class="c"># and get your public token and your secret code!</span>
+
+<span class="n">public_token</span> <span class="o">=</span> <span class="s">&quot;...here goes your public token...&quot;</span>
+<span class="n">secret_code</span> <span class="o">=</span> <span class="s">&quot;...here goes your secret code...&quot;</span>
+<span class="n">tweet</span> <span class="o">=</span> <span class="s">&quot;How cool is tweeting with a @particle Photon and @VIPER_IoT? :P&quot;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">twitter</span><span class="o">.</span><span class="n">tweet</span><span class="p">(</span><span class="n">public_token</span><span class="p">,</span><span class="n">secret_code</span><span class="p">,</span><span class="n">tweet</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">FramanTwitterException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="important-info">
+<h3>Important Info<a class="headerlink" href="#important-info" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>This library uses the <a class="reference external" href="http://library.123go.it">http://library.123go.it</a> shared server as a proxy server for OAuth. We store in our database your Private Token and your Public token to tweet with our Twitter APP with your twitter account through VIPER.</li>
+<li>We are not responsible for any problems or malfunctions resulting from the use of our library.</li>
+<li>Please avoid sending more than 2 tweets per minute.</li>
+<li>Twitter rejects repeated tweets with the same content;</li>
+<li>We would be very happy to receive your feedback here.</li>
+<li>This library is distributed under the GNU GPL v2 license.</li>
+<li>Twitter brand and Twitter logo are property of Twitter, Inc. Viper brand and logo are properties of Viper Embedded Technologies.</li>
+<li>See also the <a class="reference external" href="http://www.viperize.it/">Viper Official site</a> and the <a class="reference external" href="http://library.123go.it/twitter/docs.html">online documentation</a> of the library</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright see http://library.123go.it/twitter/docs.html.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+ $(document).ready(function(){$('a[href="#"]').attr("href","http://doc.viperize.it")}) </script>
+
+
+</body>
+</html>
